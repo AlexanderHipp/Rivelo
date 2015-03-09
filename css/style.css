@@ -104,12 +104,52 @@ section img {
   width:100%;
 }
 
+section {
+  position:relative;
+}
+
+section > a > .col {
+  overflow: auto;
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom:0em;
+}
+
+figure {
+  width:80%;
+  margin: 0 auto;
+  text-align:center;
+  padding-bottom:10em;
+}
+
 .container {
   max-width: 970px;
   margin: 0px auto;
   position: relative;
   width:100%;
   overflow: auto;
+}
+
+figure:hover h2,
+figure:hover span {
+  color:#111;
+}
+
+figure h2 {
+  font-size: 5em;
+  color: #fff;
+  font-weight: 100;
+  text-shadow: 2px 2px #111;
+  margin-bottom:0.2em;
+}
+
+figure span {
+  font-size: 2em;
+  color: #fff;
+  font-style: italic;
+  font-weight: initial;
+  font-family: 'arial';
 }
 
 
@@ -151,6 +191,19 @@ section img {
   .strip img {
     bottom: 1%;
     width: 60px;
+  }
+
+  figure {
+    width:90%;
+    padding-bottom:7em;
+  }
+
+  figure h2 {
+    font-size:3em;
+  }
+
+  figure span {
+    font-size:1.5em;
   }
 
 }
@@ -214,5 +267,19 @@ section img {
   }
   .strip img {
     width: 40px;
+  }
+
+
+  figure {
+    width:95%;
+    padding-bottom:4em;
+  }
+
+  figure h2 {
+    font-size:2.2em;
+  }
+
+  figure span {
+    font-size:1em;
   }
 }
