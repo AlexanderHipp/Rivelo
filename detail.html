@@ -16,8 +16,12 @@
 
   <script>
     $(window).scroll(function() {
-      if ($(this).scrollTop() > 120){ $('header').addClass("sticky"); } else{ $('header').removeClass("sticky");}
+      if ($(this).scrollTop() > 255){ $('header').addClass("sticky"); } else{ $('header').removeClass("sticky");}
+      if ($(this).scrollTop() > 255){ $('.sub-nav').addClass("sticky"); } else{ $('.sub-nav').removeClass("sticky");}
+      if ($(this).scrollTop() > 260){ $('.sub-nav').addClass("top-0"); } else{ $('.sub-nav').removeClass("top-0");}
+      if ($(this).scrollTop() > 260){ $('.placeholder-sub-nav').addClass("replace"); } else{ $('.placeholder-sub-nav').removeClass("replace");}
     });
+
   </script>
 
 </head>
@@ -29,7 +33,6 @@
   <!-- <img src="images/bkg_transparent_black.png" /> -->
 </div>
 
-
 <header>
   <div class="container">
     <div class="logo">
@@ -39,7 +42,7 @@
     </div>
     <nav>
       <ul>
-        <li><a href="detail.html">mens</a></li>
+        <li><a href="detail.html" class="active">mens</a></li>
         <li><a href="#">womens</a></li>
         <li><a href="#">info</a></li>
       </ul>
@@ -47,6 +50,24 @@
   </div>
 </header>
 <div class="placeholder-header"></div>
+
+<div class="placeholder-sub-nav">
+<section class="sub-nav">
+  <div class="container-nav">
+    <nav>
+      <ul>
+        <li><img src="images/menu1.jpg" /></li>
+        <li><img src="images/menu2.jpg" /></li>
+        <li><img src="images/menu3.jpg" /></li>
+        <li><img src="images/menu4.jpg" /></li>
+        <li><img src="images/menu5.jpg" /></li>
+        <li><img src="images/menu6.jpg" /></li>
+        <li><img src="images/menu6.jpg" /></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+</div>
 
 <section class="picture-display">
   <a href="#">
@@ -76,40 +97,12 @@
   <a href="#">
     <div class="col">
       <figure>
-        <h2>womens ditchling jersey</h2>
+        <h2>mens pembridge jersey</h2>
         <span>comfort & quality</span>
       </figure>
+      <div class="link-arrow"></div>
     </div>
 
-    <picture>
-      <source
-        media="(min-width: 800px)"
-        srcset="images/eorica.jpg">
-      <source
-        media="(min-width: 400px)"
-        srcset="images/eorica-400-800.jpg">
-      <img
-        src="images/eorica-400.jpg"
-        alt="a cute kitten">
-    </picture>
-  </a>
-</section>
-
-<section>
-  <div class="container">
-    <div class="text-col col-12 center">
-      <p>inspired by the beautiful heritage behind cycling, and pedaling it into the future.contemporary, understated, British designspremium performance apparel that’s accessible to everyonequality & added value where it counts & makes a difference</p>
-      <p>reveal the real you</p>
-    </div>
-    <div class="col-12 center">
-      <div class="addthis_custom_follow"></div>
-    </div>
-
-  </div>
-</section>
-
-<section class="picture-display">
-  <a href="#">
     <picture>
       <source
         media="(min-width: 800px)"
@@ -121,38 +114,9 @@
         src="images/Le-Coq-Sportif-1-400.jpg"
         alt="a cute kitten">
     </picture>
-
-    <div class="col">
-      <figure>
-        <h2>mens pembridge jersey</h2>
-        <span>comfort & quality</span>
-      </figure>
-    </div>
   </a>
 </section>
 
-<section class="picture-display">
-  <a href="#">
-    <picture>
-      <source
-        media="(min-width: 800px)"
-        srcset="images/eorica.jpg">
-      <source
-        media="(min-width: 400px)"
-        srcset="images/eorica-400-800.jpg">
-      <img
-        src="images/eorica-400.jpg"
-        alt="a cute kitten">
-    </picture>
-
-    <div class="col">
-      <figure>
-        <h2>mens pembridge jersey</h2>
-        <span>comfort & quality</span>
-      </figure>
-    </div>
-  </a>
-</section>
 
 
 
