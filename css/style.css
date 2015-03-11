@@ -3,7 +3,7 @@
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
-          transition: all 0.5s ease;
+          transition: all 0.6s ease;
 }
 
 body {
@@ -48,20 +48,22 @@ ul, li {
  .col-1 {width:  6.333333334%;}
 
 .strip {
-  background: url(http://content2.sportpursuit.com/skin/frontend/spv2/default/images/bkg_transparent_black.png) repeat;
+  background: url(../images/strip-bg.png) repeat;
   position: fixed;
   height: 100%;
   width: 10%;
-  z-index: 9;
+  z-index: 11;
+  max-width:100px;
 }
 
-.strip img {
+.strip-icon {
+  background: url(../images/sprite.png) -96px 110px repeat;
   bottom: 5%;
   position: absolute;
   left: 100%;
-  width: 75px;
+  width: 85px;
+  height: 101px;
 }
-
 .page {
   z-index:1;
 }
@@ -69,24 +71,12 @@ ul, li {
 header {
   background-color:#020202;
   max-width:100%;
-  padding-bottom:1em;
   z-index:10;
   width:100%;
-  position:fixed;
 }
 
-.placeholder-header {
-  height:144px;
-  position:relative;
-  background-color:#020202;
-}
-.placeholder-sub-nav {
-  position:relative;
-}
-
-.placeholder-sub-nav.replace {
-  height:200px;
-  width:100%;
+.sticky-wrapper {
+    background:#020202;
 }
 
 header.sticky .logo img {
@@ -94,11 +84,11 @@ header.sticky .logo img {
   width: auto;
 }
 
-header.sticky nav {
+header.sticky .top-header nav {
   margin-top:1.8em;
 }
 
-header.sticky nav ul li a {
+header.sticky .top-header nav ul li a {
   font-size: 2em;
 }
 
@@ -107,42 +97,40 @@ header .logo {
   margin-top:1.3em;
 }
 
-header .container {
-  z-index:10;
-}
-
 header .logo img {
   width:auto;
   height:100px;
 
 }
 
-header nav {
+header .top-header nav {
   position: relative;
   float:right;
   margin-top:5em;
-
 }
 
-header nav ul li {
+
+header .top-header nav ul li {
   display: inline;
   margin-left: 3em;
 }
 
-header nav ul li a {
+header .top-header nav ul li a {
   color: #fff;
   text-decoration: none;
   font-size: 3em;
   font-weight: 100;
 }
 
-header nav ul li a:hover,
-header nav ul li a.active {
+header .top-header nav ul li a:hover,
+header .top-header nav ul li a.active {
   color: #999;
 }
 
 section img {
   width:100%;
+  min-width:100%;
+  max-width:100%;
 }
 
 section {
@@ -159,11 +147,44 @@ section > a > .col {
   bottom:0em;
 }
 
+section.product-header .col {
+  overflow: auto;
+  display: block;
+  position: absolute;
+  width: 100%;
+}
+
+.flexslider {
+  margin:0px;
+  border:0px;
+}
+
+.flexslider .slides > li {
+  position:relative!important;
+}
+
+.product-roll .flexslider .slides > li:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
 figure {
-  width:90%;
-  margin: 0 0 0 10%;
   text-align:center;
   padding-bottom:10em;
+}
+
+section.product-header figure {
+  width:90%;
+  margin: 0 0 0 10%;
+  text-align:left;
+  padding-bottom:0em;
+}
+
+section.product-header figure h3 {
+  font-weight: lighter;
+  color: #fff;
+  font-size: 2.5em;
+  margin: 1em 0;
 }
 
 .container {
@@ -172,12 +193,29 @@ figure {
   position: relative;
   overflow: auto;
 }
-
-.container-nav {
+.container.top-header {
+  padding: 0 2em 1em 0;
+  margin: 0 10%;
+  z-index: 9;
+  background: #020202;
+  width:90%;
+}
+.container.sub-nav {
   margin: 0 0 0 10%;
   position: relative;
-  overflow: auto;
+  /*overflow: auto;*/
+  width:90%;
+  z-index:8;
 }
+
+header.sticky .container.sub-nav {
+  margin: -8% 0 0 10%;
+}
+
+header.sticky .container.sub-nav ul li:hover {
+  margin: 8% 0 0 0;
+}
+
 
 section .container {
   padding:2em;
@@ -192,49 +230,49 @@ section .container p {
 }
 
 .sub-nav {
-  z-index:9;
+  z-index:8;
   width:100%;
 }
 
-.sub-nav.sticky {
-  top:-50px;
-  position: fixed;
-}
-
-.sub-nav .container{
-  padding:1em 0em;
-}
-
-.sub-nav.sticky .container{
-  background:transparent;
-}
 
 .top-0 {
   top:-70px;
 }
 
 .sub-nav nav li {
-  width:14.285714286%;
+  width:25%;
   float:left;
-  
+  list-style:none;
+  position:relative;
 }
 
 .sub-nav nav li img {
-  opacity:0.8;
-  display:inherit;
-}
-
-.sub-nav.sticky nav li img {
-  opacity:1;
+  width:100%;
+  opacity:0.7;
 }
 
 .sub-nav nav li:hover img {
-  opacity:1;
   cursor:pointer;
+  opacity:1;
 }
 
-.sub-nav.sticky nav li:hover {
-  margin-top:8%;
+.sticky .sub-nav nav a span {
+  font-size: 1.5em;
+  bottom:1.2em;
+}
+
+.sticky .sub-nav nav li:hover a span {
+  bottom:3.1em;
+}
+
+.sub-nav nav a span {
+  position: absolute;
+  bottom: 1em;
+  left: 5%;
+  width: 90%;
+  text-align: center;
+  color: #fff;
+  font-size: 2em;
 }
 
 figure h2 {
@@ -259,42 +297,63 @@ figure span {
   border-radius: 50px;
 }
 
+.product-roll ul li {
+  width: 16.66666667%;
+  float: left;
+}
 
-@media screen and (max-width: 1400px) {
+.container td, .container th {
+  width: 10%;
+  text-align: center;
+  padding: 1%;
+}
+
+
+@media screen and (min-width: 1440px) {
+  .container.sub-nav {
+    width: 80%;
+  }
+  .container.sub-nav li {
+    max-height:100px;
+  }
+  .sub-nav nav li span {
+    top: 1.5em;
+    font-size:1.5em;
+  }
+  header.sticky .container.sub-nav {
+    margin-top: -60px;
+  }
+  header.sticky .container.sub-nav ul li:hover {
+    margin: 60px 0 0 0;
+  }
+  header.sticky .sub-nav nav li span {
+    top:inherit;
+    bottom:10px;
+    font-size:1.4em;
+  }
+  header.sticky .sub-nav nav li:hover span {
+    bottom:40px;
+  }
+  .container.top-header {
+    padding: 0 10% 1em;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 1440px) {
   .sub-nav.sticky {
     top: 0px;
   }
 }
 
-
-@media screen and (max-width: 999px) {
-  .container {
-    width:90%;
-    margin: 0 5%;
+@media screen and (max-width: 1200px) {
+  .sub-nav nav a span {
+    font-size: 1.5em;
   }
-  header .logo {
-    margin-top: 1em;
-  }
-  header .logo img {
-    height:80px;
-  }
-  header nav ul li a {
-    font-size: 2.5em;
-  }
-  header nav ul li {
-    margin-left:2em;
-  }
-  header.sticky {
-    padding-bottom:0.2em;
-  }
-  header.sticky nav {
-    margin-top: 1.6em;
-  }
-  header.sticky nav ul li a {
-    font-size: 1.6em;
-  }
-  .placeholder-header {
-    height:136px;
+  .sticky .sub-nav nav a span {
+    font-size: 1.2em;
   }
   .strip {
     width:5%;
@@ -303,11 +362,18 @@ figure span {
     bottom: 1%;
     width: 60px;
   }
+}
 
-  .sub-nav {
-    top: 136px;
+@media screen and (max-width: 999px) {
+  header .logo {
+    margin-top: 1em;
   }
-
+  header .top-header nav ul li {
+    margin-left: 2em;
+  }
+  header .top-header nav ul li a {
+    font-size: 2em;
+  }
   figure {
     width:90%;
     padding-bottom:7em;
@@ -320,81 +386,47 @@ figure span {
   figure span {
     font-size:1.5em;
   }
+}
 
+@media screen and (max-width: 800px) {
+  .sticky .sub-nav nav a span {
+    font-size: 0.9em;
+  }
 }
 
 @media screen and (max-width: 736px) {
-  header.sticky,
-  header {
-    padding-bottom:0.5em;
-  }
-
   header.sticky .logo,
   header .logo {
-    width:auto;
-    margin-top:0.8em;
+    margin-top:1em;
   }
-
-  header.sticky .logo img,
-  header .logo img {
+  header .logo img,
+  header.sticky .logo img {
     height:30px;
   }
-
-  header.sticky nav,
-  header nav {
-    width:auto;
-    margin-top:1.1em;
-    float:right;
+  header .top-header nav,
+  header.sticky .top-header nav {
+    margin-top: 1em;
   }
-
-  header.sticky nav ul li,
-  header nav ul li {
-    margin: 0 0.5em;
+  header .top-header nav ul li a,
+  header.sticky .top-header nav ul li a {
+    font-size: 1.3em;
   }
-
-  header.sticky nav ul li a,
-  header nav ul li a {
-    font-size: 1.2em;
-  }
-  .placeholder-header {
-    height: 55px;
+  header .top-header nav, header.sticky .top-header nav {
+    margin-top: 1.4em;
   }
 }
 
 @media screen and (max-width: 599px) {
-  header .logo {
-    margin-top: 1em;
-    width: 100%;
-    text-align: center;
+  .container.top-header {
+    padding: 0 2em 0.5em 0;
   }
-
-  header .logo img {
-    height:50px;
+  .sticky .sub-nav nav a span,
+  .sub-nav nav a span {
+    font-size: 1em;
+    bottom: 0.7em;
   }
-
-  header nav {
-    float: left;
-    margin-top: 1em;
-    width: 100%;
-    text-align: center;
-  }
-
-  header nav ul li {
-    margin: 0 1em;
-  }
-
-  header nav ul li a {
-    font-size: 1.7em;
-  }
-  .placeholder-header {
-    height:129px;
-  }
-
-  .strip {
-    width:10%;
-  }
-  .strip img {
-    width: 40px;
+  header.sticky .container.sub-nav {
+    margin: -14% 0 0 10%;
   }
 
   section .container {
@@ -403,6 +435,7 @@ figure span {
   section .container p {
     font-size: 1.2em;
   }
+
 
   figure {
     width:95%;
@@ -416,4 +449,40 @@ figure span {
   figure span {
     font-size:1em;
   }
+
+  .strip-icon {
+    display:none;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .sticky-wrapper {
+    z-index: 11;
+    position: relative;
+  }
+  .container.top-header {
+    padding: 0 1em 0.5em;
+    margin: 0em;
+    width: 100%;
+  }
+  .container.sub-nav {
+    margin: 0em;
+    width:100%;
+  }
+  .sub-nav nav li {
+    width: 50%;
+  }
+  header.sticky .container.sub-nav {
+    margin: 0em;
+  }
+  header.sticky .sub-nav nav li {
+    margin-top: -6em;
+  }
+  .sub-nav nav a span {
+    font-size: 1.5em;
+  }
+  header .top-header nav ul li {
+    margin-left: 1em;
+  }
+
 }

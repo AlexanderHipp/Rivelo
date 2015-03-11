@@ -2,125 +2,398 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Rivelo</title>
+  <title>Detail - Rivelo</title>
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- CSS -->
+  <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="css/style.css">
   <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700' rel='stylesheet' type='text/css'>
-
-  <!-- JS -->
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-
-  <script>
-    $(window).scroll(function() {
-      if ($(this).scrollTop() > 255){ $('header').addClass("sticky"); } else{ $('header').removeClass("sticky");}
-      if ($(this).scrollTop() > 255){ $('.sub-nav').addClass("sticky"); } else{ $('.sub-nav').removeClass("sticky");}
-      if ($(this).scrollTop() > 260){ $('.sub-nav').addClass("top-0"); } else{ $('.sub-nav').removeClass("top-0");}
-      if ($(this).scrollTop() > 260){ $('.placeholder-sub-nav').addClass("replace"); } else{ $('.placeholder-sub-nav').removeClass("replace");}
-    });
-
-  </script>
 
 </head>
 <body>
 
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-520ce4516a11e799" async="async"></script>
-
 <div class="strip">
-  <!-- <img src="images/bkg_transparent_black.png" /> -->
+  <div class="strip-icon"></div>
 </div>
 
 <header>
-  <div class="container">
-    <div class="logo">
-      <a href="index.html">
-        <img src="images/logo.png" alt="rivelo logo">
-      </a>
+  <div id="test">
+    <div class="container top-header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="rivelo logo">
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="detail.html" class="active">mens</a></li>
+          <li><a href="detail.html">womens</a></li>
+          <li><a href="info.html">info</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="detail.html" class="active">mens</a></li>
-        <li><a href="#">womens</a></li>
-        <li><a href="#">info</a></li>
-      </ul>
-    </nav>
+    <div class="container sub-nav">
+      <nav>
+        <ul>
+          <li><a href="#product1"><img src="images/menu1.jpg" /><span>mens jerseys</span></a></li>
+          <li><a href="#product2"><img src="images/menu2.jpg" /><span>mens bibshorts & tights</span></a></li>
+          <li><a href="#"><img src="images/menu3.jpg" /><span>mens jackets</span></a></li>
+          <li><a href="#"><img src="images/menu4.jpg" /><span>accessories</span></a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
-<div class="placeholder-header"></div>
 
-<div class="placeholder-sub-nav">
-<section class="sub-nav">
-  <div class="container-nav">
-    <nav>
-      <ul>
+<section class="product-header" id="product1">
+  <div id="slider" class="flexslider">
+    <ul class="slides">
+      <li>
+        <div class="col">
+          <figure>
+            <h3>mens pembridge jersey 1</h3>
+          </figure>
+        </div>
+        <picture>
+        <source
+          media="(min-width: 800px)"
+          srcset="images/eorica.jpg">
+        <source
+          media="(min-width: 400px)"
+          srcset="images/eorica-400-800.jpg">
+        <img
+          src="images/eorica-400.jpg"
+          alt="a cute kitten">
+      </picture></li>
+      <li>
+        <div class="col">
+          <figure>
+            <h3>mens pembridge jersey 2</h3>
+          </figure>
+        </div>
+        <picture>
+        <source
+          media="(min-width: 800px)"
+          srcset="images/eorica.jpg">
+        <source
+          media="(min-width: 400px)"
+          srcset="images/eorica-400-800.jpg">
+        <img
+          src="images/eorica-400.jpg"
+          alt="a cute kitten">
+      </picture></li>
+      <li>
+        <div class="col">
+          <figure>
+            <h3>mens pembridge jersey</h3>
+          </figure>
+        </div>
+        <picture>
+        <source
+          media="(min-width: 800px)"
+          srcset="images/eorica.jpg">
+        <source
+          media="(min-width: 400px)"
+          srcset="images/eorica-400-800.jpg">
+        <img
+          src="images/eorica-400.jpg"
+          alt="a cute kitten">
+      </picture></li>
+      <li>
+        <div class="col">
+          <figure>
+            <h3>mens pembridge jersey</h3>
+          </figure>
+        </div>
+        <picture>
+        <source
+          media="(min-width: 800px)"
+          srcset="images/eorica.jpg">
+        <source
+          media="(min-width: 400px)"
+          srcset="images/eorica-400-800.jpg">
+        <img
+          src="images/eorica-400.jpg"
+          alt="a cute kitten">
+      </picture></li>
+      <li><picture>
+        <source
+          media="(min-width: 800px)"
+          srcset="images/eorica.jpg">
+        <source
+          media="(min-width: 400px)"
+          srcset="images/eorica-400-800.jpg">
+        <img
+          src="images/eorica-400.jpg"
+          alt="a cute kitten">
+      </picture></li>
+      <li><picture>
+        <source
+          media="(min-width: 800px)"
+          srcset="images/eorica.jpg">
+        <source
+          media="(min-width: 400px)"
+          srcset="images/eorica-400-800.jpg">
+        <img
+          src="images/eorica-400.jpg"
+          alt="a cute kitten">
+      </picture></li>
+    </ul>
+  </div>
+</section>
+
+<section class="product-roll">
+  <div class="col">
+    <div id="carousel" class="flexslider">
+      <ul class="slides">
         <li><img src="images/menu1.jpg" /></li>
         <li><img src="images/menu2.jpg" /></li>
         <li><img src="images/menu3.jpg" /></li>
         <li><img src="images/menu4.jpg" /></li>
-        <li><img src="images/menu5.jpg" /></li>
-        <li><img src="images/menu6.jpg" /></li>
-        <li><img src="images/menu6.jpg" /></li>
+        <li><img src="images/menu3.jpg" /></li>
+        <li><img src="images/menu2.jpg" /></li>
       </ul>
-    </nav>
+    </div>
   </div>
 </section>
-</div>
 
-<section class="picture-display">
-  <a href="#">
-    <div class="col">
-      <figure>
-        <h2>mens pembridge jersey</h2>
-        <span>comfort & quality</span>
-      </figure>
-      <div class="link-arrow"></div>
+<section>
+  <div class="container">
+    <div class="text-col col-8 left">
+      <h2>mens pembridge jersey</h2>
+      <p>mens pembridge jersey
+
+      simple, stylish, clean design, that allows you to focus on the ride<br />
+      high quality Italian technical fabric for breathability and<br />
+      wicking performance<br />
+      zip guard<br />
+      reflective details for visibility<br />
+      4 pocket design, including water resistant zip pocket for small valuables<br />
+      ergonomic fit<br />
+      contrast coloured trims<br />
+      rivelo silicone gripper at back hem<br />
+      full zip, with cam lock puller<br />
+
+      </p>
     </div>
-
-    <picture>
-      <source
-        media="(min-width: 800px)"
-        srcset="images/Le-Coq-Sportif-1.jpg">
-      <source
-        media="(min-width: 400px)"
-        srcset="images/Le-Coq-Sportif-1-400-800.jpg">
-      <img
-        src="images/Le-Coq-Sportif-1-400.jpg"
-        alt="a cute kitten">
-    </picture>
-  </a>
+    <div class="text-col col-4 center">
+      <p>reviews</p>
+      <p>Great jersey, made from really <br />
+      comfortable fabric<br />
+      *****<br />
+      road.cc May 2015<br />
+    </p>
+    </div>
+  </div>
 </section>
 
-<section class="picture-display">
-  <a href="#">
-    <div class="col">
-      <figure>
-        <h2>mens pembridge jersey</h2>
-        <span>comfort & quality</span>
-      </figure>
-      <div class="link-arrow"></div>
-    </div>
+<section class="product-header" id="product2">
+  <div id="slider2" class="flexslider">
+    <ul class="slides">
+      <li>
+        <div class="col">
+          <figure>
+            <h3>mens pembridge jersey 1</h3>
+          </figure>
+        </div>
+        <picture>
+          <source
+            media="(min-width: 800px)"
+            srcset="images/Le-Coq-Sportif-1.jpg">
+          <source
+            media="(min-width: 400px)"
+            srcset="images/Le-Coq-Sportif-1-400-800.jpg">
+          <img
+            src="images/Le-Coq-Sportif-1-400.jpg"
+            alt="a cute kitten">
+        </picture></li>
+      <li>
+        <div class="col">
+          <figure>
+            <h3>mens pembridge jersey 2</h3>
+          </figure>
+        </div>
+        <picture>
+        <source
+          media="(min-width: 800px)"
+          srcset="images/eorica.jpg">
+        <source
+          media="(min-width: 400px)"
+          srcset="images/eorica-400-800.jpg">
+        <img
+          src="images/eorica-400.jpg"
+          alt="a cute kitten">
+      </picture></li>
+      <li>
+        <div class="col">
+          <figure>
+            <h3>mens pembridge jersey</h3>
+          </figure>
+        </div>
+        <picture>
+        <source
+          media="(min-width: 800px)"
+          srcset="images/eorica.jpg">
+        <source
+          media="(min-width: 400px)"
+          srcset="images/eorica-400-800.jpg">
+        <img
+          src="images/eorica-400.jpg"
+          alt="a cute kitten">
+      </picture></li>
+      <li>
+        <div class="col">
+          <figure>
+            <h3>mens pembridge jersey</h3>
+          </figure>
+        </div>
+        <picture>
+        <source
+          media="(min-width: 800px)"
+          srcset="images/eorica.jpg">
+        <source
+          media="(min-width: 400px)"
+          srcset="images/eorica-400-800.jpg">
+        <img
+          src="images/eorica-400.jpg"
+          alt="a cute kitten">
+      </picture></li>
+      <li><picture>
+        <source
+          media="(min-width: 800px)"
+          srcset="images/eorica.jpg">
+        <source
+          media="(min-width: 400px)"
+          srcset="images/eorica-400-800.jpg">
+        <img
+          src="images/eorica-400.jpg"
+          alt="a cute kitten">
+      </picture></li>
+      <li><picture>
+        <source
+          media="(min-width: 800px)"
+          srcset="images/eorica.jpg">
+        <source
+          media="(min-width: 400px)"
+          srcset="images/eorica-400-800.jpg">
+        <img
+          src="images/eorica-400.jpg"
+          alt="a cute kitten">
+      </picture></li>
+    </ul>
+  </div>
+</section>
 
-    <picture>
-      <source
-        media="(min-width: 800px)"
-        srcset="images/Le-Coq-Sportif-1.jpg">
-      <source
-        media="(min-width: 400px)"
-        srcset="images/Le-Coq-Sportif-1-400-800.jpg">
-      <img
-        src="images/Le-Coq-Sportif-1-400.jpg"
-        alt="a cute kitten">
-    </picture>
-  </a>
+<section class="product-roll">
+  <div class="col">
+    <div id="carousel2" class="flexslider">
+      <ul class="slides">
+        <li><img src="images/menu1.jpg" /></li>
+        <li><img src="images/menu2.jpg" /></li>
+        <li><img src="images/menu3.jpg" /></li>
+        <li><img src="images/menu4.jpg" /></li>
+        <li><img src="images/menu3.jpg" /></li>
+        <li><img src="images/menu2.jpg" /></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 
+<section>
+  <div class="container">
+    <div class="text-col col-8 left">
+      <h2>mens pembridge jersey</h2>
+      <p>mens pembridge jersey
+
+      simple, stylish, clean design, that allows you to focus on the ride<br />
+      high quality Italian technical fabric for breathability and<br />
+      wicking performance<br />
+      zip guard<br />
+      reflective details for visibility<br />
+      4 pocket design, including water resistant zip pocket for small valuables<br />
+      ergonomic fit<br />
+      contrast coloured trims<br />
+      rivelo silicone gripper at back hem<br />
+      full zip, with cam lock puller<br />
+
+      </p>
+    </div>
+    <div class="text-col col-4 center">
+      <p>reviews</p>
+      <p>Great jersey, made from really <br />
+      comfortable fabric<br />
+      *****<br />
+      road.cc May 2015<br />
+    </p>
+    </div>
+  </div>
+</section>
 
 
+<!-- JS -->
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/modernizr.js"></script>
 
+<script>
+  $(document).ready(function(){
+    $("header").sticky({topSpacing:0});
+  });
+</script>
 
+<script>
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 100){ $('header').addClass("sticky"); } else{ $('header').removeClass("sticky");}
+  });
+</script>
+
+<!-- FlexSlider -->
+<script defer src="js/jquery.flexslider-min.js"></script>
+
+<script type="text/javascript">
+  $(window).load(function(){
+    $('#carousel').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 300,
+      itemMargin: 0,
+      asNavFor: '#slider'
+    });
+
+    $('#slider').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      sync: "#carousel"
+    });
+
+    $('#carousel2').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 300,
+      itemMargin: 0,
+      asNavFor: '#slider2'
+    });
+
+    $('#slider2').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      sync: "#carousel2"
+    });
+  });
+</script>
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-520ce4516a11e799" async="async"></script>
 
 </body>
