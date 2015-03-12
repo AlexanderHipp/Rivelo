@@ -20,31 +20,29 @@
 </div>
 
 <header>
-  <div id="test">
-    <div class="container top-header">
-      <div class="logo">
-        <a href="index.html">
-          <img src="images/logo.png" alt="rivelo logo">
-        </a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="detail.html" class="active">mens</a></li>
-          <li><a href="detail.html">womens</a></li>
-          <li><a href="info.html">info</a></li>
-        </ul>
-      </nav>
+  <div class="container top-header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="rivelo logo">
+      </a>
     </div>
-    <div class="container sub-nav">
-      <nav>
-        <ul>
-          <li><a href="#product1"><img src="images/menu1.jpg" /><span>mens jerseys</span></a></li>
-          <li><a href="#product2"><img src="images/menu2.jpg" /><span>mens bibshorts & tights</span></a></li>
-          <li><a href="#"><img src="images/menu3.jpg" /><span>mens jackets</span></a></li>
-          <li><a href="#"><img src="images/menu4.jpg" /><span>accessories</span></a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav>
+      <ul>
+        <li><a href="detail.html" class="active">mens</a></li>
+        <li><a href="detail.html">womens</a></li>
+        <li><a href="info.html">info</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container sub-nav">
+    <nav>
+      <ul>
+        <li><a href="#product1"><img src="images/menu1.jpg" /><span>mens jerseys</span></a></li>
+        <li><a href="#product2"><img src="images/menu2.jpg" /><span>mens bibshorts & tights</span></a></li>
+        <li><a href="#"><img src="images/menu3.jpg" /><span>mens jackets</span></a></li>
+        <li><a href="#"><img src="images/menu4.jpg" /><span>accessories</span></a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
@@ -58,6 +56,9 @@
           </figure>
         </div>
         <picture>
+        <source
+          media="(min-width: 1200px)"
+          srcset="images/eorica-1200.jpg">
         <source
           media="(min-width: 800px)"
           srcset="images/eorica.jpg">
@@ -75,6 +76,9 @@
           </figure>
         </div>
         <picture>
+          <source
+            media="(min-width: 1200px)"
+            srcset="images/eorica-1200.jpg">
         <source
           media="(min-width: 800px)"
           srcset="images/eorica.jpg">
@@ -92,6 +96,9 @@
           </figure>
         </div>
         <picture>
+          <source
+            media="(min-width: 1200px)"
+            srcset="images/eorica-1200.jpg">
         <source
           media="(min-width: 800px)"
           srcset="images/eorica.jpg">
@@ -109,6 +116,9 @@
           </figure>
         </div>
         <picture>
+          <source
+            media="(min-width: 1200px)"
+            srcset="images/eorica-1200.jpg">
         <source
           media="(min-width: 800px)"
           srcset="images/eorica.jpg">
@@ -121,6 +131,9 @@
       </picture></li>
       <li><picture>
         <source
+          media="(min-width: 1200px)"
+          srcset="images/eorica-1200.jpg">
+        <source
           media="(min-width: 800px)"
           srcset="images/eorica.jpg">
         <source
@@ -131,6 +144,9 @@
           alt="a cute kitten">
       </picture></li>
       <li><picture>
+        <source
+          media="(min-width: 1200px)"
+          srcset="images/eorica-1200.jpg">
         <source
           media="(min-width: 800px)"
           srcset="images/eorica.jpg">
@@ -347,7 +363,7 @@
 
 <script>
   $(window).scroll(function() {
-    if ($(this).scrollTop() > 100){ $('header').addClass("sticky"); } else{ $('header').removeClass("sticky");}
+    if ($(this).scrollTop() > 90){ $('header').addClass("sticky"); } else{ $('header').removeClass("sticky");}
   });
 </script>
 
@@ -391,6 +407,18 @@
       slideshow: false,
       sync: "#carousel2"
     });
+  });
+
+
+  // navigation scroll lijepo radi materem
+  $('nav a').click(function(event) {
+      var id = $(this).attr("href");
+      var offset = 70;
+      var target = $(id).offset().top - offset;
+      $('html, body').animate({
+          scrollTop: target
+      }, 500);
+      event.preventDefault();
   });
 </script>
 
