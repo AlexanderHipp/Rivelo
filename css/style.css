@@ -8,7 +8,8 @@
 
 body {
   margin:0px;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Comfortaa', cursive;
+  font-weight:100;
 }
 
 ul, li {
@@ -89,7 +90,7 @@ header.sticky .top-header nav {
 }
 
 header.sticky .top-header nav ul li a {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 header .logo {
@@ -118,7 +119,7 @@ header .top-header nav ul li {
 header .top-header nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-size: 3em;
+  font-size: 2em;
   font-weight: 100;
 }
 
@@ -292,7 +293,7 @@ section .container p {
 }
 
 .sticky .sub-nav nav a span {
-  font-size: 1.5em;
+  font-size: 1.3em;
   bottom:1.2em;
 }
 
@@ -385,7 +386,7 @@ figure span {
   header.sticky .sub-nav nav li span {
     top:inherit;
     bottom:10px;
-    font-size:1.4em;
+    font-size:1em;
   }
   header.sticky .sub-nav nav li:hover span {
     bottom:40px;
@@ -412,7 +413,8 @@ figure span {
     font-size: 1.5em;
   }
   .sticky .sub-nav nav a span {
-    font-size: 1.2em;
+    font-size: 1em;
+    bottom:1.4em;
   }
   .strip img {
     bottom: 1%;
@@ -472,6 +474,9 @@ figure span {
 }
 
 @media screen and (max-width: 800px) {
+  .sub-nav nav a span {
+    font-size: 1em;
+  }
   .sticky .sub-nav nav a span {
     font-size: 0.9em;
   }
