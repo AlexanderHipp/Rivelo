@@ -139,10 +139,6 @@ section {
   position:relative;
 }
 
-section > a {
-  background:#000;
-}
-
 section > a > .col {
   overflow: auto;
   display: block;
@@ -157,11 +153,13 @@ section.product-header .col {
   display: block;
   position: absolute;
   width: 100%;
+  z-index:1;
 }
 
 .flexslider {
   margin:0px;
   border:0px;
+  overflow:hidden;
 }
 
 .flexslider .slides > li {
@@ -193,9 +191,26 @@ section.product-header .col {
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-left-color: #020202;
+  border-left-color: #fff;
   border-width: 30px;
   margin-top: 0px;
+}
+.flex-direction-nav .flex-prev {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.flexslider:hover .flex-direction-nav .flex-next {
+  opacity: 0.8;
+  right: 50px;
+}
+
+.flexslider:hover .flex-direction-nav .flex-prev {
+  opacity: 0.8;
+  left: 130px;
 }
 
 figure {
@@ -205,13 +220,10 @@ figure {
 
 section.product-header,
 section.product-roll {
-  border-bottom: 4px solid;
+  border-bottom: 2px solid;
 }
 
 
-section.product-header {
-  border-top: 2px solid;
-}
 
 section.product-header figure {
   width:90%;
@@ -224,7 +236,8 @@ section.product-header figure h3 {
   font-weight: lighter;
   color: #fff;
   font-size: 2.5em;
-  margin: 1em 0;
+  margin: 2em 0 1em;
+  text-shadow: 1px 1px 0px #000;
 }
 
 .container {
@@ -324,6 +337,7 @@ figure h2 {
   font-size: 5em;
   color: #fff;
   margin-bottom:0.2em;
+  text-shadow: 1px 1px 0px #000;
 }
 
 figure span {
@@ -348,7 +362,7 @@ figure span {
   position: absolute;
   pointer-events: none;
   border-color: rgba(136, 183, 213, 0);
-  border-left-color: #020202;
+  border-left-color: #fff;
   border-width: 30px;
   margin-top: -30px;
 }
@@ -363,6 +377,24 @@ figure span {
   text-align: center;
   padding: 1%;
 }
+
+
+.menu {
+  width: 200px;
+  position: absolute;
+  z-index: 1;
+  right: 30px;
+}
+
+.menu li {
+  list-style-type:none;
+}
+
+section.sausage .col {
+  position:absolute;
+  z-index:1;
+}
+
 
 
 @media screen and (min-width: 1440px) {
@@ -414,7 +446,7 @@ figure span {
   }
   .sticky .sub-nav nav a span {
     font-size: 1em;
-    bottom:1.4em;
+    bottom:0.5em;
   }
   .strip img {
     bottom: 1%;
@@ -480,6 +512,20 @@ figure span {
   .sticky .sub-nav nav a span {
     font-size: 0.9em;
   }
+
+  .col-11,
+  .col-10,
+   .col-9,
+   .col-8,
+   .col-7,
+   .col-6,
+   .col-5,
+   .col-4 {width: 98%;}
+
+   .flex-direction-nav {
+     display:none;
+   }
+
 }
 
 @media screen and (max-width: 736px) {
@@ -502,6 +548,7 @@ figure span {
   header .top-header nav, header.sticky .top-header nav {
     margin-top: 1.4em;
   }
+
 }
 
 @media screen and (max-width: 599px) {
@@ -541,6 +588,17 @@ figure span {
   .strip-icon {
     display:none;
   }
+  section.product-header figure h3 {
+    font-weight: lighter;
+    color: #fff;
+    font-size: 1.5em;
+    margin: 0.5em 0;
+
+  }
+
+  header.sticky .container.sub-nav {
+    margin: -2em 0 0 0;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -549,7 +607,7 @@ figure span {
     position: relative;
   }
   .container.top-header {
-    padding: 0 1em 0.5em;
+    padding: 0 0.5em 0.5em;
     margin: 0em;
     width: 100%;
   }
@@ -560,17 +618,18 @@ figure span {
   .sub-nav nav li {
     width: 50%;
   }
-  header.sticky .container.sub-nav {
-    margin: 0em;
-  }
   header.sticky .sub-nav nav li {
     margin-top: -6em;
   }
   .sub-nav nav a span {
-    font-size: 1.5em;
+    font-size: 1em;
   }
   header .top-header nav ul li {
-    margin-left: 1em;
+    margin-left: 0.6em;
   }
+  header .top-header nav ul li a, header.sticky .top-header nav ul li a {
+    font-size: 0.8em;
+  }
+
 
 }
