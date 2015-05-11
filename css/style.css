@@ -134,8 +134,6 @@ header .top-header nav ul li a.active {
 
 section img {
   width:100%;
-  min-width:100%;
-  max-width:100%;
 }
 
 section {
@@ -228,11 +226,31 @@ figure {
   padding-bottom:10em;
 }
 
+figure figcaption {
+  font-size: 2.3em;
+  color: #111;
+}
+
+figure.bottom {
+  padding-bottom: 3em;
+}
+
+figure.bottom figcaption {
+  padding-bottom: 2em;
+}
+
+figure.bottom figcaption.bottom {
+  padding-bottom: 0em;
+}
+
 section.product-header,
 section.product-roll {
   border-bottom: 2px solid;
 }
 
+picture {
+  opacity:0.4;
+}
 
 
 section.product-header figure {
@@ -277,7 +295,7 @@ header.sticky .container.sub-nav ul li:hover {
 
 
 section .container {
-  padding:2em;
+  padding:1.6em 2em 2em;
   overflow:auto;
   margin: 0 0 0 10%;
   width:90%;
@@ -286,6 +304,14 @@ section .container {
 section .container p {
   font-size: 1.5em;
   line-height: 1.5em;
+}
+
+section .container p.small {
+  font-size: 1.2em;
+}
+
+section .container p.big {
+  font-size: 2.5em;
 }
 
 .sub-nav {
@@ -337,7 +363,7 @@ section .container p {
 
 
 figure h2,
-figure span {
+figure figcaption {
   width: 91%;
   text-align: center;
   margin-right: auto;
@@ -345,16 +371,12 @@ figure span {
 }
 
 figure h2 {
-  font-size: 5em;
-  color: #fff;
-  margin-bottom:0.2em;
-  text-shadow: 1px 1px 0px #000;
+  font-size: 3em;
+  font-weight: normal;
+  color: #111;
+  margin-bottom: 0em;
 }
 
-figure span {
-  font-size: 2em;
-  color: #fff;
-}
 
 .link-arrow {
   position: absolute;
@@ -460,7 +482,7 @@ section.sausage .col {
     width: 60px;
   }
   figure h2,
-  figure span {
+  figure figcaption {
     width: 90%;
   }
 
@@ -503,6 +525,11 @@ section.sausage .col {
     height: 110px;
   }
 
+  section > a > .col,
+  section .col {
+    width:95%;
+    left:50px;
+  }
 
   figure {
     width:90%;
@@ -510,14 +537,14 @@ section.sausage .col {
   }
 
   figure h2 {
-    font-size:3em;
+    font-size: 2em;
   }
 
-  figure span {
+  figure figcaption {
     font-size:1.5em;
   }
   figure h2,
-  figure span {
+  figure figcaption {
     width: 100%;
     margin-left:0px;
     margin-right:0px;
@@ -580,6 +607,15 @@ section.sausage .col {
     display:none;
   }
 
+
+  section > a > .col, section .col {
+    width: 93%;
+  }
+
+  figure {
+    width: 90%;
+    padding-bottom: 5em;
+  }
 }
 
 @media screen and (max-width: 599px) {
@@ -606,21 +642,28 @@ section.sausage .col {
     font-size: 1.2em;
   }
 
-
+  section > a > .col, section .col {
+    width: 95%;
+    left: 30px;
+  }
 
   figure {
-    width:95%;
+    width:100%;
     padding-bottom:4em;
+    margin-left:0px;
   }
 
   figure h2 {
-    font-size:2.2em;
+    font-size:1.8em;
   }
 
-  figure span {
-    font-size:1em;
+  figure figcaption {
+    font-size: 1.3em;
   }
 
+  figure.bottom {
+    padding-bottom: 2em;
+  }
 
   section.product-header figure h3 {
     font-weight: lighter;
@@ -643,12 +686,30 @@ section.sausage .col {
   header .top-header nav ul li {
     margin-left: 0.7em;
   }
+
+
+
 }
 
+@media screen and (max-width: 489px) {
+  figure,
+  figure.bottom {
+    padding-bottom: 0.8em;
+  }
+
+  figure h2 {
+    font-size: 1.4em;
+  }
+  figure figcaption {
+    font-size: 1em;
+  }
+}
 
 @media screen and (max-width: 420px) {
 
-
+  section.spacer {
+    height: 83px;
+  }
 
   .container.sub-nav {
     margin: 0em;
@@ -679,6 +740,14 @@ section.sausage .col {
   }
   header .top-header nav ul li a, header.sticky .top-header nav ul li a {
     font-size: 0.8em;
+  }
+
+  figure h2 {
+    font-size: 1.6em;
+  }
+
+  figure figcaption {
+    font-size: 1.4em;
   }
 
 
