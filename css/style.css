@@ -69,15 +69,13 @@ ul, li {
 }
 
 header {
-  background-color:#020202;
-  max-width:100%;
   z-index:10;
-  width:100%;
-  min-width:100%;
+  width:100%!important;
 }
 
-.sticky-wrapper {
-    background:#020202;
+header ul {
+  background:#020202;
+  overflow:auto;
 }
 
 header.sticky .logo img {
@@ -247,18 +245,18 @@ section.product-header figure h3 {
   overflow: auto;
 }
 .container.top-header {
-  padding: 0 2em 1em 0;
-  margin: 0 10%;
+  padding: 0 2em 1em 10%;
   z-index: 9;
   background: #020202;
-  width:90%;
+  width:100%;
+  margin:0em;
 }
 .container.sub-nav {
-  padding: 0 0 0 10%;
+  padding: 0 0 0 100px;
+  background:#999;
   margin:0px;
   position: relative;
   z-index:8;
-  background: #020202;
 }
 
 header.sticky .container.sub-nav ul li:hover {
@@ -289,7 +287,7 @@ section .container p {
 }
 
 .sub-nav nav li {
-  width:25%;
+  width:50%;
   float:left;
   list-style:none;
   position:relative;
@@ -305,10 +303,6 @@ section .container p {
   opacity:1;
 }
 
-.sticky .sub-nav nav a span {
-  font-size: 1.3em;
-  bottom:1.2em;
-}
 
 .sticky .sub-nav nav li:hover a span {
   bottom:3.1em;
@@ -322,6 +316,11 @@ section .container p {
   text-align: center;
   color: #fff;
   font-size: 2em;
+}
+
+.sticky .sub-nav nav a span {
+  font-size: 1.3em;
+  bottom:1.2em;
 }
 
 
@@ -403,31 +402,26 @@ section.sausage .col {
     padding:0 10%;
   }
   .container.sub-nav li {
-    max-height:100px;
+    max-height:80px;
   }
   .sub-nav nav li span {
-    top: 1.5em;
     font-size:1.5em;
   }
-  header.sticky .container.sub-nav {
-    margin: -60px 0 0 0;
+  .container.top-header {
+    padding: 0 10% 1em 10%;
   }
   header.sticky .container.sub-nav ul li:hover {
-    margin: 60px 0 0 0;
+    margin: 40px 0 0 0;
   }
   header.sticky .sub-nav nav li span {
     top:inherit;
     bottom:10px;
-    font-size:1em;
+    color:#ccc;
   }
   header.sticky .sub-nav nav li:hover span {
     bottom:40px;
   }
-  .container.top-header {
-    padding: 0 10% 1em;
-    margin: 0;
-    width: 100%;
-  }
+
 }
 
 
@@ -441,13 +435,13 @@ section.sausage .col {
 }
 
 @media screen and (max-width: 1200px) {
-  .sub-nav nav a span {
+  /*.sub-nav nav a span {
     font-size: 1.5em;
   }
   .sticky .sub-nav nav a span {
     font-size: 1em;
     bottom:0.5em;
-  }
+  }*/
   .strip img {
     bottom: 1%;
     width: 60px;
@@ -506,12 +500,12 @@ section.sausage .col {
 }
 
 @media screen and (max-width: 800px) {
-  .sub-nav nav a span {
+  /*.sub-nav nav a span {
     font-size: 1em;
   }
   .sticky .sub-nav nav a span {
     font-size: 0.9em;
-  }
+  }*/
 
   .col-11,
   .col-10,
@@ -555,11 +549,11 @@ section.sausage .col {
   .container.top-header {
     padding: 0 2em 0.5em 0;
   }
-  .sticky .sub-nav nav a span,
+  /*.sticky .sub-nav nav a span,
   .sub-nav nav a span {
     font-size: 1em;
     bottom: 0.7em;
-  }
+  }*/
   header.sticky .container.sub-nav {
     margin: -14% 0 0 0;
   }
@@ -621,9 +615,9 @@ section.sausage .col {
   header.sticky .sub-nav nav li {
     margin-top: -6em;
   }
-  .sub-nav nav a span {
+  /*.sub-nav nav a span {
     font-size: 1em;
-  }
+  }*/
   header .top-header nav ul li {
     margin-left: 0.6em;
   }
