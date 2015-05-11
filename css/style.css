@@ -55,6 +55,8 @@ ul, li {
   height: 100%;
   width: 10%;
   z-index: 11;
+  top:0px;
+  left:0px;
 }
 
 .strip-icon {
@@ -70,8 +72,11 @@ ul, li {
 }
 
 header {
-  z-index:10;
-  width:100%!important;
+  z-index: 10;
+  width: 100%!important;
+  position: fixed;
+  top: 0px;
+  left: 0px;
 }
 
 header ul {
@@ -138,7 +143,13 @@ section {
   position:relative;
 }
 
-section > a > .col {
+section.spacer {
+  height:140px;
+  background:#000;
+}
+
+section > a > .col,
+section .col {
   overflow: auto;
   display: block;
   position: absolute;
@@ -444,13 +455,6 @@ section.sausage .col {
 }
 
 @media screen and (max-width: 1200px) {
-  /*.sub-nav nav a span {
-    font-size: 1.5em;
-  }
-  .sticky .sub-nav nav a span {
-    font-size: 1em;
-    bottom:0.5em;
-  }*/
   .strip img {
     bottom: 1%;
     width: 60px;
@@ -459,19 +463,27 @@ section.sausage .col {
   figure span {
     width: 90%;
   }
+
+  header .top-header nav ul li a {
+    font-size: 1.5em;
+  }
 }
 
 @media screen and (min-width: 1000px) {
   .strip {
     max-width:100px;
   }
-  section > a > .col {
+  section > a > .col,
+  section .col {
     width:100%;
     left:0%;
   }
 }
 
 @media screen and (max-width: 999px) {
+  .strip {
+    max-width:50px;
+  }
   header .logo {
     margin-top: 1em;
   }
@@ -479,8 +491,19 @@ section.sausage .col {
     margin-left: 2em;
   }
   header .top-header nav ul li a {
-    font-size: 2em;
+    font-size: 1.2em;
   }
+  header .top-header nav {
+    margin-top:3.3em;
+  }
+  header .logo img {
+    height: 80px;
+  }
+  section.spacer {
+    height: 110px;
+  }
+
+
   figure {
     width:90%;
     padding-bottom:7em;
@@ -509,12 +532,6 @@ section.sausage .col {
 }
 
 @media screen and (max-width: 800px) {
-  /*.sub-nav nav a span {
-    font-size: 1em;
-  }
-  .sticky .sub-nav nav a span {
-    font-size: 0.9em;
-  }*/
 
   .col-11,
   .col-10,
@@ -532,13 +549,13 @@ section.sausage .col {
 }
 
 @media screen and (max-width: 736px) {
-  header.sticky .logo,
+
   header .logo {
-    margin-top:1em;
+    margin-top: 0.5em;
   }
   header .logo img,
   header.sticky .logo img {
-    height:30px;
+    height:35px;
   }
   header .top-header nav,
   header.sticky .top-header nav {
@@ -546,25 +563,40 @@ section.sausage .col {
   }
   header .top-header nav ul li a,
   header.sticky .top-header nav ul li a {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
   header .top-header nav, header.sticky .top-header nav {
-    margin-top: 1.4em;
+    margin-top: 0.6em;
+  }
+
+  .container.top-header {
+    padding: 0 2em 0em 10%;
+  }
+  section.spacer {
+    height: 47px;
+  }
+
+  .strip-icon {
+    display:none;
   }
 
 }
 
 @media screen and (max-width: 599px) {
-  .container.top-header {
-    padding: 0 2em 0.5em 0;
+  header.sticky {
+    top: -100px;
   }
-  /*.sticky .sub-nav nav a span,
-  .sub-nav nav a span {
+  .strip {
+    max-width: 30px;
+  }
+  header .top-header nav, header.sticky .top-header nav {
+    margin-top: 0.9em;
+  }
+  header .top-header nav ul li a, header.sticky .top-header nav ul li a {
     font-size: 1em;
-    bottom: 0.7em;
-  }*/
-  header.sticky .container.sub-nav {
-    margin: -14% 0 0 0;
+  }
+  header .top-header nav ul li {
+    margin-left: 1.3em;
   }
 
   section .container {
@@ -573,6 +605,7 @@ section.sausage .col {
   section .container p {
     font-size: 1.2em;
   }
+
 
 
   figure {
@@ -588,9 +621,7 @@ section.sausage .col {
     font-size:1em;
   }
 
-  .strip-icon {
-    display:none;
-  }
+
   section.product-header figure h3 {
     font-weight: lighter;
     color: #fff;
@@ -604,16 +635,21 @@ section.sausage .col {
   }
 }
 
-@media screen and (max-width: 420px) {
-  .sticky-wrapper {
-    z-index: 11;
-    position: relative;
-  }
+
+@media screen and (min-width: 421px) and (max-width: 489px) {
   .container.top-header {
-    padding: 0 0.5em 0.5em;
-    margin: 0em;
-    width: 100%;
+    padding: 0 0.5em 0em 10%;
   }
+  header .top-header nav ul li {
+    margin-left: 0.7em;
+  }
+}
+
+
+@media screen and (max-width: 420px) {
+
+
+
   .container.sub-nav {
     margin: 0em;
     width:100%;
@@ -621,14 +657,25 @@ section.sausage .col {
   .sub-nav nav li {
     width: 50%;
   }
-  header.sticky .sub-nav nav li {
-    margin-top: -6em;
+
+  .container.top-header {
+    padding: 0 0 0em 30px;
   }
-  /*.sub-nav nav a span {
-    font-size: 1em;
-  }*/
+
+  .container.top-header .logo {
+    width:100%;
+    text-align:center;
+  }
+
+  header .top-header nav,
+  header.sticky .top-header nav {
+    margin:0.2em 0 0.8em;
+    float:left;
+    width:100%;
+    text-align:center;
+  }
   header .top-header nav ul li {
-    margin-left: 0.6em;
+    margin-left: 0.5em;
   }
   header .top-header nav ul li a, header.sticky .top-header nav ul li a {
     font-size: 0.8em;
