@@ -339,7 +339,6 @@ section .container p.big {
   width:100%;
 }
 
-
 .top-0 {
   top:-70px;
 }
@@ -350,10 +349,17 @@ section .container p.big {
   list-style:none;
   position:relative;
   height:100%;
+  overflow:hidden;
+}
+
+
+.sub-nav-three-elements nav li {
+  width:33.33%;
 }
 
 .sub-nav nav li img {
   width:100%;
+  min-height:80px;
   opacity:0.7;
 }
 
@@ -368,7 +374,7 @@ section .container p.big {
   width: 100%;
   text-align: center;
   color: #fff;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .sticky .sub-nav nav a span {
@@ -455,9 +461,6 @@ section.sausage .col {
 .sticky .container.sub-nav ul {
   height:50px;
 }
-.sub-nav nav li span {
-  font-size:1.5em;
-}
 header.sticky .sub-nav nav li span {
   top:inherit;
   bottom:15px;
@@ -486,6 +489,10 @@ header.sticky .sub-nav nav li span {
   }
   section .container p {
     max-width: 800px;
+  }
+  .sub-nav nav li img {
+    height: 100%;
+    width: auto;
   }
 }
 
@@ -697,6 +704,10 @@ header.sticky .sub-nav nav li span {
   section .container p.small {
     font-size: 1em;
   }
+  .sub-nav nav li span {
+    font-size: 1em;
+    bottom: 2em;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -704,13 +715,9 @@ header.sticky .sub-nav nav li span {
   section.spacer {
     height: 83px;
   }
-
   .container.sub-nav {
     margin: 0em;
     width:100%;
-  }
-  .sub-nav nav li {
-    width: 50%;
   }
 
   .container.top-header {
