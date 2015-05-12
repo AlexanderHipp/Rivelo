@@ -322,6 +322,11 @@ section.product-header figure h3 {
   position: relative;
   overflow: auto;
 }
+
+.product .container {
+  margin-bottom: 2em;
+}
+
 .container.top-header {
   padding: 0 2em 1em 10%;
   z-index: 9;
