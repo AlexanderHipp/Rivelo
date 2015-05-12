@@ -22,3 +22,26 @@ $('nav a').click(function(event) {
     }, 500);
     event.preventDefault();
 });
+
+// Flexslider
+$(window).load(function(){
+  if ($('#carousel').length > 0) {
+    $('#carousel').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 300,
+      itemMargin: 0,
+      asNavFor: '#slider'
+    });
+
+    $('#slider').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      sync: "#carousel"
+    });
+  }
+});

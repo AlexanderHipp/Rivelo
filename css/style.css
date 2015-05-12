@@ -171,11 +171,9 @@ section .col {
 }
 
 section.product-header .col {
-  overflow: auto;
-  display: block;
-  position: absolute;
-  width: 100%;
-  z-index:1;
+  z-index: 1;
+  top: 0px;
+  bottom: initial;
 }
 
 .flexslider {
@@ -195,43 +193,20 @@ section.product-header .col {
 
 
 .flex-direction-nav a {
-  width: 30px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   z-index:5;
   color:transparent;
   text-shadow:0px 0px 0px;
 }
-.flex-direction-nav a:before {
-  display:none;
-}
-.flex-direction-nav a:after {
-  left: 0%;
-  top: 0%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-left-color: #fff;
-  border-width: 30px;
-  margin-top: 0px;
-}
-.flex-direction-nav .flex-prev {
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
 
 .flexslider:hover .flex-direction-nav .flex-next {
-  opacity: 0.8;
+  opacity: 1;
   right: 50px;
 }
 
 .flexslider:hover .flex-direction-nav .flex-prev {
-  opacity: 0.8;
+  opacity: 1;
   left: 130px;
 }
 
@@ -263,6 +238,26 @@ figure.bottom figcaption.bottom {
 }
 
 
+.flex-direction-nav a:before {
+  position: relative;
+  top: 8pt;
+  content: ""!important;
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  border-right: 0.1em solid #fff;
+  border-top: 0.1em solid#fff;
+  margin-right: 0.5em;
+}
+
+.flex-direction-nav .flex-nav-prev a:before {
+  transform: rotate(230deg);
+  left:20px;
+}
+
+.flex-direction-nav .flex-nav-next a:before {
+  transform: rotate(45deg);
+}
 
 picture {
   opacity:0.4;
@@ -272,20 +267,15 @@ picture {
   opacity:1;
 }
 
-
 section.product-header figure {
-  width:100%;
-  margin: 0 0 0 10%;
   text-align:left;
-  padding-bottom:0em;
 }
 
 section.product-header figure h3 {
-  font-weight: lighter;
-  color: #fff;
-  font-size: 2.5em;
-  margin: 2em 0 1em;
-  text-shadow: 1px 1px 0px #000;
+  font-size: 2em;
+  color: #686868;
+  font-weight: 100;
+  margin: 1em;
 }
 
 .container {
@@ -532,6 +522,9 @@ h1 {
     max-width: 800px;
   }
 
+  section.product-header figure h3 {
+    font-size: 1.8em;
+  }
 }
 
 
@@ -590,6 +583,8 @@ h1 {
   .box {
     max-width: 700px;
   }
+
+
 }
 
 @media screen and (max-width: 800px) {
@@ -613,6 +608,11 @@ h1 {
    .sub-title-links a {
        font-size: 1.3em;
     }
+
+    section.product-header figure h3 {
+      font-size: 1.2em;
+    }
+
 }
 
 @media screen and (max-width: 736px) {
@@ -729,13 +729,6 @@ h1 {
     padding-bottom: 2em;
   }
 
-  section.product-header figure h3 {
-    font-weight: lighter;
-    color: #fff;
-    font-size: 1.5em;
-    margin: 0.5em 0;
-
-  }
 
   header.sticky .container.sub-nav {
     margin: -2em 0 0 0;
