@@ -20,6 +20,7 @@ ul, li {
 
 a {
   cursor:pointer;
+  outline : none;
 }
 
 .center {
@@ -243,11 +244,25 @@ figure.bottom figcaption.bottom {
   top: 8pt;
   content: ""!important;
   display: inline-block;
-  width: 1.2em;
-  height: 1.2em;
+  width: 0.8em;
+  height: 0.8em;
   border-right: 0.1em solid #fff;
-  border-top: 0.1em solid#fff;
+  border-top: 0.1em solid #fff;
   margin-right: 0.5em;
+}
+
+.flex-direction-nav .flex-nav-prev:hover > a:before,
+.flex-direction-nav .flex-nav-next:hover > a:before {
+  border-right: 0.1em solid #111;
+  border-top: 0.1em solid #111;
+}
+
+.flex-direction-nav .flex-prev {
+  left: 140px;
+}
+
+.flex-direction-nav .flex-next {
+  right: 60px;
 }
 
 .flex-direction-nav .flex-nav-prev a:before {
