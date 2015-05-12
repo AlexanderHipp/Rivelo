@@ -3,7 +3,6 @@ $(function() {
   var header = $("header");
   $(window).scroll(function() {
       var scroll = $(window).scrollTop();
-
       if (scroll > 0) {
           header.removeClass('not-sticky').addClass("sticky");
       } else {
@@ -13,9 +12,10 @@ $(function() {
 });
 
 // Navigation scroll
-$('nav a').click(function(event) {
+$('a').click(function(event) {
     var id = $(this).attr("href");
-    var offset = 70;
+    // margin top
+    var offset = 150;
     var target = $(id).offset().top - offset;
     $('html, body').animate({
         scrollTop: target
@@ -25,8 +25,8 @@ $('nav a').click(function(event) {
 
 // Flexslider
 $(window).load(function(){
-  if ($('#carousel').length > 0) {
-    $('#carousel').flexslider({
+  if ($('.flexslider').length > 0) {
+    $('#carousel1').flexslider({
       animation: "slide",
       controlNav: false,
       animationLoop: false,
@@ -41,7 +41,7 @@ $(window).load(function(){
       controlNav: false,
       animationLoop: false,
       slideshow: false,
-      sync: "#carousel"
+      sync: "#carousel1"
     });
   }
 });
