@@ -144,6 +144,7 @@ section {
   padding:0px;
   position:relative;
   width:100%;
+  overflow:auto;
 }
 
 section > a {
@@ -157,7 +158,7 @@ section.spacer {
 }
 
 section.spacer.sub-nav-spacer {
-  margin-bottom:100px;
+  margin-bottom:130px;
 }
 
 section > a > .col,
@@ -261,10 +262,7 @@ figure.bottom figcaption.bottom {
   margin-left: 100px;
 }
 
-section.product-header,
-section.product-roll {
-  border-bottom: 2px solid;
-}
+
 
 picture {
   opacity:0.4;
@@ -319,11 +317,33 @@ section .container {
   width:100%;
 }
 
-section .container p {
-  font-size: 1.5em;
+section .container p,
+section .container h2,
+section .container ul {
+  font-size: 1.2em;
   line-height: 1.5em;
   max-width: 1000px;
   margin: 1em auto;
+}
+
+.box {
+  background: red;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section .container ul li {
+  list-style-type: none;
+  margin-left:1.3em;
+}
+section .container ul li:before{
+  content: "–"; /* en dash here */
+  position: absolute;
+  margin-left: -1.1em;
 }
 
 section .container p.small {
@@ -467,6 +487,22 @@ header.sticky .sub-nav nav li span {
   color:#ccc;
 }
 
+h1 {
+  font-size: 2.4em;
+}
+
+.sub-title-links {
+  margin-bottom: 2.5em;
+}
+
+.sub-title-links a {
+  color: #424242;
+  padding: 0 2em;
+  font-size: 1.4em;
+}
+
+
+
 @media screen and (min-width: 1440px) {
   .container.top-header {
     padding: 0 10% 1em 10%;
@@ -494,6 +530,11 @@ header.sticky .sub-nav nav li span {
     height: 100%;
     width: auto;
   }
+
+  .box {
+    max-width: 800px;
+  }
+
 }
 
 
@@ -545,8 +586,12 @@ header.sticky .sub-nav nav li span {
   .container.sub-nav {
     padding-left:50px;
   }
-  section .container p {
+  .index section .container p {
     max-width: 600px;
+  }
+
+  .box {
+    max-width: 700px;
   }
 }
 
@@ -564,6 +609,13 @@ header.sticky .sub-nav nav li span {
      display:none;
    }
 
+   .box {
+     max-width: 600px;
+   }
+
+   .sub-title-links a {
+       font-size: 1.3em;
+    }
 }
 
 @media screen and (max-width: 736px) {
@@ -597,22 +649,38 @@ header.sticky .sub-nav nav li span {
     display:none;
   }
 
-  section .container p {
+  .index section .container p {
     max-width: 500px;
   }
 
+  h1 {
+    font-size: 1.6em;
+  }
+
+  .sub-title-links {
+    margin-bottom: 2.2em;
+  }
+
+  .sub-title-links a {
+    padding: 0 1.3em;
+    font-size: 1.2em;
+  }
+
+  .box {
+    max-width: 500px;
+  }
 }
 
 @media screen and (max-width: 599px) {
 
-  inner-content {
+  .inner-content {
     margin-left: 30px;
   }
   figure,
   .container.sub-nav {
     padding-left:30px;
   }
-  section .container p {
+  .index section .container p {
     max-width: 400px;
   }
 
@@ -632,8 +700,18 @@ header.sticky .sub-nav nav li span {
     margin-left: 1.3em;
   }
 
-  section .container p {
+  .index section .container p {
     font-size: 1.2em;
+  }
+
+  .product section .container p {
+    font-size: 0.9em;
+    line-height:1.4em;
+  }
+
+  .product section .container li {
+    font-size: 0.7em;
+    line-height:1.4em;
   }
 
   figure {
@@ -664,10 +742,29 @@ header.sticky .sub-nav nav li span {
     margin: -2em 0 0 0;
   }
 
-
-
   section .container p.big {
     font-size: 1.6em;
+  }
+
+  h1 {
+    font-size: 1.3em;
+  }
+
+  .sub-title-links {
+    margin-bottom: 2em;
+  }
+
+  .sub-title-links a {
+    padding: 0 1em;
+    font-size: 1em;
+  }
+
+  section.spacer.sub-nav-spacer {
+    margin-bottom:100px;
+  }
+
+  .box {
+    max-width: 400px;
   }
 }
 
@@ -697,20 +794,33 @@ header.sticky .sub-nav nav li span {
   figure {
     padding-left:30px;
   }
-  section .container p {
+  .index section .container p {
     max-width: 280px;
     font-size: 1em;
   }
-  section .container p.small {
+  .index section .container p.small {
     font-size: 1em;
   }
   .sub-nav nav li span {
     font-size: 1em;
     bottom: 2em;
   }
+
+  .sub-title-links a {
+    padding: 0px 0.7em;
+    font-size: 0.8em;
+  }
+
+  .box {
+    max-width: 320px;
+  }
 }
 
 @media screen and (max-width: 420px) {
+
+  .box {
+    max-width: 280px;
+  }
 
   section.spacer {
     height: 83px;
@@ -747,7 +857,7 @@ header.sticky .sub-nav nav li span {
     font-size: 1.2em;
   }
 
-  section .container p.big {
+  .index section .container p.big {
     font-size: 1.4em;
   }
 
@@ -755,7 +865,7 @@ header.sticky .sub-nav nav li span {
     font-size: 1.0em;
   }
 
-  section .container p {
+  .index section .container p {
     max-width: 230px;
   }
 
