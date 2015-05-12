@@ -18,6 +18,9 @@ ul, li {
   padding:0px;
 }
 
+a {
+  cursor:pointer;
+}
 
 .center {
   text-align: center;
@@ -53,7 +56,7 @@ ul, li {
   background: url(../images/strip-bg.png) repeat;
   position: fixed;
   height: 100%;
-  width: 10%;
+  width: 100px;
   z-index: 11;
   top:0px;
   left:0px;
@@ -137,13 +140,24 @@ section img {
 }
 
 section {
-  overflow:auto;
+  margin:0px;
+  padding:0px;
+  position:relative;
+  width:100%;
+}
+
+section > a {
   position:relative;
 }
+
 
 section.spacer {
   height:140px;
   background:#000;
+}
+
+section.spacer.sub-nav-spacer {
+  margin-bottom:100px;
 }
 
 section > a > .col,
@@ -151,9 +165,8 @@ section .col {
   overflow: auto;
   display: block;
   position: absolute;
-  width: 90%;
+  width: 100%;
   bottom:0em;
-  left:10%;
 }
 
 section.product-header .col {
@@ -223,7 +236,8 @@ section.product-header .col {
 
 figure {
   text-align:center;
-  padding-bottom:10em;
+  padding: 0 0 10em 100px;
+  margin:0px;
 }
 
 figure figcaption {
@@ -243,6 +257,10 @@ figure.bottom figcaption.bottom {
   padding-bottom: 0em;
 }
 
+.inner-content {
+  margin-left: 100px;
+}
+
 section.product-header,
 section.product-roll {
   border-bottom: 2px solid;
@@ -252,9 +270,13 @@ picture {
   opacity:0.4;
 }
 
+.sub-nav picture {
+  opacity:1;
+}
+
 
 section.product-header figure {
-  width:90%;
+  width:100%;
   margin: 0 0 0 10%;
   text-align:left;
   padding-bottom:0em;
@@ -283,27 +305,25 @@ section.product-header figure h3 {
 }
 .container.sub-nav {
   padding: 0 0 0 100px;
-  background:#999;
   margin:0px;
   position: relative;
   z-index:8;
 }
 
-header.sticky .container.sub-nav ul li:hover {
-  margin: 8% 0 0 0;
-}
 
 
 section .container {
-  padding:1.6em 2em 2em;
+  padding:0px;
   overflow:auto;
-  margin: 0 0 0 10%;
-  width:90%;
+  margin: 0px;
+  width:100%;
 }
 
 section .container p {
   font-size: 1.5em;
   line-height: 1.5em;
+  max-width: 1000px;
+  margin: 1em auto;
 }
 
 section .container p.small {
@@ -329,6 +349,7 @@ section .container p.big {
   float:left;
   list-style:none;
   position:relative;
+  height:100%;
 }
 
 .sub-nav nav li img {
@@ -341,16 +362,10 @@ section .container p.big {
   opacity:1;
 }
 
-
-.sticky .sub-nav nav li:hover a span {
-  bottom:3.1em;
-}
-
 .sub-nav nav a span {
   position: absolute;
   bottom: 1em;
-  left: 5%;
-  width: 90%;
+  width: 100%;
   text-align: center;
   color: #fff;
   font-size: 2em;
@@ -364,10 +379,7 @@ section .container p.big {
 
 figure h2,
 figure figcaption {
-  width: 91%;
   text-align: center;
-  margin-right: auto;
-  margin-left: 100px;
 }
 
 figure h2 {
@@ -437,70 +449,46 @@ section.sausage .col {
   text-align:left!important;
 }
 
-
-@media screen and (min-width: 1440px) {
-  .container.sub-nav {
-    margin:0px;
-    padding:0 10%;
-  }
-  .container.sub-nav li {
-    max-height:80px;
-  }
-  .sub-nav nav li span {
-    font-size:1.5em;
-  }
-  .container.top-header {
-    padding: 0 10% 1em 10%;
-  }
-  header.sticky .container.sub-nav ul li:hover {
-    margin: 40px 0 0 0;
-  }
-  header.sticky .sub-nav nav li span {
-    top:inherit;
-    bottom:10px;
-    color:#ccc;
-  }
-  header.sticky .sub-nav nav li:hover span {
-    bottom:40px;
-  }
-
+.container.sub-nav ul {
+  height:80px;
+}
+.sticky .container.sub-nav ul {
+  height:50px;
+}
+.sub-nav nav li span {
+  font-size:1.5em;
+}
+header.sticky .sub-nav nav li span {
+  top:inherit;
+  bottom:15px;
+  color:#ccc;
 }
 
-
-@media screen and (max-width: 1440px) {
-  .sub-nav.sticky {
-    top: 0px;
-  }
-  header.sticky .container.sub-nav {
-    margin: -8% 0 0 0;
+@media screen and (min-width: 1440px) {
+  .container.top-header {
+    padding: 0 10% 1em 10%;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  .strip img {
-    bottom: 1%;
-    width: 60px;
-  }
-  figure h2,
-  figure figcaption {
-    width: 90%;
-  }
-
   header .top-header nav ul li a {
     font-size: 1.5em;
   }
+  .strip {
+    width:60px;
+  }
+  .inner-content {
+    margin-left: 60px;
+  }
+  figure,
+  .container.sub-nav {
+    padding-left:60px;
+  }
+  section .container p {
+    max-width: 800px;
+  }
 }
 
-@media screen and (min-width: 1000px) {
-  .strip {
-    max-width:100px;
-  }
-  section > a > .col,
-  section .col {
-    width:100%;
-    left:0%;
-  }
-}
 
 @media screen and (max-width: 999px) {
   .strip {
@@ -524,18 +512,6 @@ section.sausage .col {
   section.spacer {
     height: 110px;
   }
-
-  section > a > .col,
-  section .col {
-    width:95%;
-    left:50px;
-  }
-
-  figure {
-    width:90%;
-    padding-bottom:7em;
-  }
-
   figure h2 {
     font-size: 2em;
   }
@@ -543,12 +519,7 @@ section.sausage .col {
   figure figcaption {
     font-size:1.5em;
   }
-  figure h2,
-  figure figcaption {
-    width: 100%;
-    margin-left:0px;
-    margin-right:0px;
-  }
+
   .link-arrow {
     right: 3em;
     bottom: 2em;
@@ -556,10 +527,23 @@ section.sausage .col {
   .link-arrow:after {
     border-width: 20px;
   }
+
+  .inner-content {
+    margin-left: 50px;
+  }
+  figure {
+    padding-left:50px;
+    padding-bottom: 7em;
+  }
+  .container.sub-nav {
+    padding-left:50px;
+  }
+  section .container p {
+    max-width: 600px;
+  }
 }
 
 @media screen and (max-width: 800px) {
-
   .col-11,
   .col-10,
    .col-9,
@@ -602,23 +586,29 @@ section.sausage .col {
   section.spacer {
     height: 47px;
   }
-
   .strip-icon {
     display:none;
   }
 
-
-  section > a > .col, section .col {
-    width: 93%;
+  section .container p {
+    max-width: 500px;
   }
 
-  figure {
-    width: 90%;
-    padding-bottom: 5em;
-  }
 }
 
 @media screen and (max-width: 599px) {
+
+  inner-content {
+    margin-left: 30px;
+  }
+  figure,
+  .container.sub-nav {
+    padding-left:30px;
+  }
+  section .container p {
+    max-width: 400px;
+  }
+
   header.sticky {
     top: -100px;
   }
@@ -635,22 +625,12 @@ section.sausage .col {
     margin-left: 1.3em;
   }
 
-  section .container {
-    padding: 1em;
-  }
   section .container p {
     font-size: 1.2em;
   }
 
-  section > a > .col, section .col {
-    width: 95%;
-    left: 30px;
-  }
-
   figure {
-    width:100%;
     padding-bottom:4em;
-    margin-left:0px;
   }
 
   figure h2 {
@@ -676,6 +656,12 @@ section.sausage .col {
   header.sticky .container.sub-nav {
     margin: -2em 0 0 0;
   }
+
+
+
+  section .container p.big {
+    font-size: 1.6em;
+  }
 }
 
 
@@ -692,15 +678,23 @@ section.sausage .col {
 }
 
 @media screen and (max-width: 489px) {
-  figure,
-  figure.bottom {
-    padding-bottom: 0.8em;
-  }
-
   figure h2 {
     font-size: 1.4em;
   }
   figure figcaption {
+    font-size: 1em;
+  }
+  .inner-content {
+    margin-left: 30px;
+  }
+  figure {
+    padding-left:30px;
+  }
+  section .container p {
+    max-width: 280px;
+    font-size: 1em;
+  }
+  section .container p.small {
     font-size: 1em;
   }
 }
@@ -743,11 +737,23 @@ section.sausage .col {
   }
 
   figure h2 {
-    font-size: 1.6em;
+    font-size: 1.2em;
+  }
+
+  section .container p.big {
+    font-size: 1.4em;
   }
 
   figure figcaption {
-    font-size: 1.4em;
+    font-size: 1.0em;
+  }
+
+  section .container p {
+    max-width: 230px;
+  }
+
+  section .container p.small {
+    font-size:0.9em;
   }
 
 

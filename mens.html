@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Detail - Rivelo</title>
+  <title>Mens - Rivelo</title>
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,7 +36,7 @@
     </nav>
   </div>
 
-  <!--
+
   <div class="container sub-nav">
     <nav>
       <ul>
@@ -69,10 +69,10 @@
       </ul>
     </nav>
   </div>
--->
+
 </header>
 
-
+<section class="spacer sub-nav-spacer"></section>
 
 <!-- START Jerseys -->
 
@@ -855,20 +855,7 @@
 
 <!-- JS -->
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="js/jquery.sticky.js"></script>
 <script src="js/modernizr.js"></script>
-
-<script>
-  $(document).ready(function(){
-    $("header").sticky({topSpacing:0});
-  });
-</script>
-
-<script>
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100){ $('header').addClass("sticky"); } else{ $('header').removeClass("sticky");}
-  });
-</script>
 
 <!-- FlexSlider -->
 <script defer src="js/jquery.flexslider-min.js"></script>
@@ -907,6 +894,21 @@
   });
 </script>
 
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-520ce4516a11e799" async="async"></script>
+<script>
 
+  $(function() {
+      //caches a jQuery object containing the header element
+      var header = $("header");
+      $(window).scroll(function() {
+          var scroll = $(window).scrollTop();
+
+          if (scroll > 0) {
+              header.removeClass('not-sticky').addClass("sticky");
+          } else {
+              header.removeClass("sticky").addClass('not-sticky');
+          }
+      });
+  });
+
+</script>
 </body>
